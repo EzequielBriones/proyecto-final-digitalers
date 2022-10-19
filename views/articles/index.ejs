@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+  </head>
+
+  <body class="bg-gradient-to-b from-slate-800 to-slate-900 h-full min-h-screen text-slate-50">
+    <nav class="flex flex-row items-center hover:bg-indigo-800 hover:border-b p-2 transition h-20">
+      <ul class="flex gap-2 flex-1">
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Trabajos</a></li>
+        <li><a href="#">Posteos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <div class="flex justify-end p-2">
+        <a href="/articles/new" class="flex gap-1">
+          <img class="fill-[#243c5a] w-9" src="/public/images/new-icon.svg" alt="" />
+        </a>
+      </div>
+    </nav>
+
+    <h1 class="text-5xl mt-20 mb-20 p-1 font-bold">Ultimos posteos</h1>
+    <% articles.forEach(article => { %>
+    <a href="articles/<%= article.slug %>" class="text-decoration-none flex flex-wrap place-content-center">
+      <div class="mb-5 bg-indigo-900 hover:bg-indigo-800 hover:scale-105 border border-gray-200 rounded shadow-md flex justify-between w-4/5 p-3 transition">
+        <div class="">
+          <p>#<%= article.category %></p>
+          <h2 class="text-3xl font-bold mb-4"><%= article.title %></h2>
+          <p><%= article.markdown %></p>
+        </div>
+        <div><span><%= article.createdAt.toLocaleString() %> </span></div>
+      </div>
+    </a>
+    <% }) %>
+    <script src="/public/js/tailwindcss.config.js"></script>
+  </body>
+</html>

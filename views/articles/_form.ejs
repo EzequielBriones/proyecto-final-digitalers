@@ -1,0 +1,30 @@
+<div class="flex items-center justify-center p-12">
+  <div class="mx-auto w-full max-w-[550px]">
+    <div class="mb-3">
+      <label for="category" class="mb-3 block text-base font-medium text-slate-50">Category</label>
+      <select name="category" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#000] outline-none focus:border-[#6A64F1] focus:shadow-md">
+        <option value="Reflexiones">Reflexiones</option>
+        <option value="Experiencias">Experiencias</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="title" class="mb-3 block text-base font-medium text-slate-50">Titulo</label>
+      <input required type="text" name="title" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" id="title" value="<%= article.title%> " />
+    </div>
+    <div class="mb-3">
+      <label for="markdown" class="mb-3 block text-base font-medium text-slate-50">Resumen</label>
+      <textarea class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="markdown" id="markdown" rows="3"><%= article.markdown%></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="mb-3 block text-base font-medium text-slate-50">Descripción</label>
+      <textarea class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="description" id="description" rows="3"><%= article.description%> </textarea>
+    </div>
+    <div class="flex gap-2">
+      <a href="/" class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"> Cancelar </a>
+      <button type="submit" class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">Guardar</button>
+    </div>
+  </div>
+</div>
